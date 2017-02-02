@@ -18,7 +18,7 @@ An account is also necessary to access the TrueTime documentation.
   ```
   git clone https://github.com/saylorsd/PATransitTicker
  
-  cd bus-ticker
+  cd PATransitTicker
  
   cp settings.example.py settings.py
   ```
