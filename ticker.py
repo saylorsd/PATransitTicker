@@ -88,7 +88,7 @@ try:
         if not message:
             message = "0 Buses Predicted Within Next 30 Minutes " + DIAMOND
 
-        message = message.replace('|', DOUBLE_EIGTH_NOTE)
+        message = message.replace('|', DIAMOND)
         ticker.scroll_message(message, speed=SPEED, repeats=SCROLL_TIMES)
 
     log('It ran without error!!')
