@@ -1,4 +1,4 @@
-# TransitTicker
+# PATransitTicker
 Display upcoming Port Authority of Allegheny County bus/T times on a scrolling LED message board connected to a Raspberry Pi.
 
 
@@ -16,7 +16,7 @@ An account is also necessary to access the TrueTime documentation.
 0. Connect Matrix to Raspberry Pi (see my [LED Ticker's readme](https://github.com/saylorsd/led-matrix-ticker) for an example)
 1. Clone this repo onto your Raspberry Pi and generate a settings file.  
   ```
-  git clone https://github.com/saylorsd/bus-ticker
+  git clone https://github.com/saylorsd/PATransitTicker
  
   cd bus-ticker
  
