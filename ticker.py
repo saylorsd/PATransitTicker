@@ -6,7 +6,7 @@ from datetime import datetime as dt, timedelta
 
 from led_matrix_ticker.led import LEDMatrixTicker as Ticker  # TODO: come up with better naming and organization
 
-from settings import API_KEY, LOG_FILE, DURATION, FONT, SPEED
+from settings import API_KEY, LOG_FILE, DURATION, FONT, SPEED, PREDICTIONS, SCROLL_TIMES
 
 # ==============================================================================
 # CONSTANTS
@@ -18,6 +18,7 @@ SPEED = (SPEED % 10) + 1
 
 # Fun Characters
 SMILE =     chr(0x01)
+_SMILE =    chr(0x02)
 HEART =     chr(0x03)
 DIAMOND =   chr(0x04)
 CLUB =      chr(0x05)
@@ -46,43 +47,21 @@ def log(msg, file=LOG_FILE, mode='w', display=True):
         print(msg)
 
 
-# ==============================================================================
-# STOPS AND ROUTES
-# list of dicts that represent each prediction I'd like to see results on
-# the keys match the parameters on teh API
-# ==============================================================================
-p_requests = [
-    {
-        'stpid': 8161,  # stop id -- see readme for more details
-        'rt': 'P3',  # bus route name
-        'dir': 'INBOUND'  # direction: 'INBOUND' or 'OUTBOUND'
-    },
-    {
-        'stpid': 18141,
-        'rt': '75',
-        'dir': 'INBOUND'
-    }
-]
-
-# ==============================================================================
-# LED MATRIX SCROLLING TEXT TICKER
-# * in dictionary form for easy reading
-# ==============================================================================
+# instantiate LED Matrix Ticker controller
 ticker = Ticker(width=4, brightness=3, font=FONT, rotated=True)  # settings for my 1x4 matrix display
-scroll_times = 20  # number of times to scroll message before checking for new times
 
 # ==============================================================================
 # SEND REQUESTS TO PORT AUTHORITY'S REALTIME API
 # ==============================================================================
 # for each stop, route, direction combination provide above, find the
-# next arrival time and print it on the ticker `scroll_times` times
+# next arrival time and print it on the ticker `SCROLL_TIMES` times
 # stop once it's past `end_time`
 # ==============================================================================
 
 try:
     while (dt.now() < end_time):
         message = ""
-        for request in p_requests:
+        for request in PREDICTIONS:
             request.update({'key': API_KEY})  # add my api key to request parameters
             response = requests.get(API_URL, params=request)  # make request to API
             # see readme for example result
@@ -96,21 +75,21 @@ try:
                     if len(prediction):
                         arrival = dt.strptime(prediction.findall('prdtm')[0].text, "%Y%m%d %H:%M")
                         time = arrival - dt.now()
-                        message += "{}: {} ({:.0f}mins) |".format(request['rt'], arrival.strftime('%H:%M'),
+                        message += "{}: {} ({:.0f}mins) | ".format(request['rt'], arrival.strftime('%H:%M'),
                                                                   (time.seconds / 60))
 
                 else:  # no predictions often means that a bus isn't coming in the next 30 minutes
-                    log('[ERROR] - no predictions for {}'.format(request['rt']))  #
+                    log('[ERROR] - no predictions for {}'.format(request['rt']))
 
             else:
                 log('ERROR] - request error (code: {})'.format(response.status_code))
                 message = "API ERROR"
 
         if not message:
-            message = "0 Buses Predicted Within Next 30 Minutes " + HEART
+            message = "0 Buses Predicted Within Next 30 Minutes " + DIAMOND
 
         message = message.replace('|', DOUBLE_EIGTH_NOTE)
-        ticker.scroll_message(message, speed=SPEED, repeats=scroll_times)
+        ticker.scroll_message(message, speed=SPEED, repeats=SCROLL_TIMES)
 
     log('It ran without error!!')
 
