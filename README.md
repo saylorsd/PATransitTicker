@@ -79,6 +79,6 @@ Then add a line like this:
 
 
 ## Extra Resources
-[Port Authority's Developer Resources](http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx)  
-[My LED Matrix Ticker Code](https://github.com/saylorsd/led-matrix-ticker)  
-[TrueTime Documentation](http://realtime.portauthority.org/bustime/apidoc/v1/main.jsp?section=documentation.jsp) (must be logged into [TrueTime account](http://realtime.portauthority.org/bustime/updateDeveloper.jsp))
+* [Port Authority's Developer Resources](http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx)  
+* [My LED Matrix Ticker Code](https://github.com/saylorsd/led-matrix-ticker)  
+* [TrueTime Documentation](http://realtime.portauthority.org/bustime/apidoc/v1/main.jsp?section=documentation.jsp) (must be logged into * [TrueTime account](http://realtime.portauthority.org/bustime/updateDeveloper.jsp))
