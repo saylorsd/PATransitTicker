@@ -11,6 +11,9 @@ Display upcoming Port Authority of Allegheny County bus/T times on a scrolling L
 Make an account [here](http://realtime.portauthority.org/bustime/createAccount.jsp) to request an API key.  
 An account is also necessary to access the TrueTime documentation.
 
+## Hardware Installation
+Check out [The LED Matrix Ticker Driver used for this project](https://github.com/saylorsd/led-matrix-ticker) for installation instructions.  
+If using differently hardware, you will likely need to use a different driver and follow different installation instructions.
 
 ## Installation
 0. Connect Matrix to Raspberry Pi (see my [LED Ticker's readme](https://github.com/saylorsd/led-matrix-ticker) for an example)
