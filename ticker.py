@@ -4,7 +4,7 @@ import requests
 import xml.etree.ElementTree as ET
 from datetime import datetime as dt, timedelta
 
-from led_matrix_ticker.led import LEDMatrixTicker as Ticker  # TODO: come up with better naming and organization
+from led_matrix_ticker import LEDMatrixTicker as Ticker  # TODO: come up with better naming and organization
 
 from settings import API_KEY, LOG_FILE, DURATION, FONT, SPEED, PREDICTIONS, SCROLL_TIMES
 
