@@ -16,11 +16,11 @@ An account is also necessary to access the TrueTime documentation.
 0. Connect Matrix to Raspberry Pi (see my [LED Ticker's readme](https://github.com/saylorsd/led-matrix-ticker) for an example)
 1. Clone this repo onto your Raspberry Pi and generate a settings file.  
   ```
-  git clone https://github.com/saylorsd/PATransitTicker
+  git clone --recursive https://github.com/saylorsd/PATransitTicker
  
   cd PATransitTicker
  
-  cp settings.example.py settings.py
+  cp settings-example.py settings.py
   ```
 2. Open `settings.py` in your favorite text editor and copy your API key in place of "YOUR_API_KEY_HERE!"  
   ```
