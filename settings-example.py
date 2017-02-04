@@ -8,6 +8,7 @@ API_KEY = "YOUR_API_KEY_HERE!"              # TrueTime API key from Port Authori
 FONT = CP437_FONT_ROTATED                   # !! Change this to your font of choice (be sure to import it above!)
 LOG_FILE = "/home/pi/logs/bus-ticker.log"   # Where the log file will go.  Use Falsey value to log to stdout
 DURATION = 30                               # Number of minutes you want it to run for
+WIDTH = 4                                   # Width of ticker (i.e. number of matrices)
 BRIGHTNESS = 1                              # LED brightness: 0-15
 SPEED = 5                                   # Message speed 1-10
 SCROLL_TIMES = 10                           # number of times to scroll message before checking for new times

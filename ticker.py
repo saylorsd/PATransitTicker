@@ -6,7 +6,7 @@ from datetime import datetime as dt, timedelta
 
 from led_matrix_ticker import LEDMatrixTicker as Ticker  # TODO: come up with better naming and organization
 
-from settings import API_KEY, LOG_FILE, DURATION, FONT, SPEED, PREDICTIONS, SCROLL_TIMES, BRIGHTNESS
+from settings import API_KEY, LOG_FILE, DURATION, FONT, SPEED, PREDICTIONS, SCROLL_TIMES, BRIGHTNESS, WIDTH
 
 # ==============================================================================
 # CONSTANTS
@@ -48,7 +48,7 @@ def log(msg, file=LOG_FILE, mode='w', display=True):
 
 
 # instantiate LED Matrix Ticker controller
-ticker = Ticker(width=4, brightness=BRIGHTNESS, font=FONT, rotated=True)  # settings for my 1x4 matrix display
+ticker = Ticker(width=WIDTH, brightness=BRIGHTNESS, font=FONT, rotated=True)  # settings for my 1x4 matrix display
 
 # ==============================================================================
 # SEND REQUESTS TO PORT AUTHORITY'S REALTIME API
