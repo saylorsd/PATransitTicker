@@ -1,7 +1,7 @@
 # PATransitTicker
 Display upcoming Port Authority of Allegheny County bus/T times on a scrolling LED message board connected to a Raspberry Pi.
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/0sr0p34u6iE/0.jpg)](http://www.youtube.com/watch?v=0sr0p34u6iE)
+[![The Ticker](http://img.youtube.com/vi/KYl46gl7y2Y/0.jpg)](http://www.youtube.com/watch?v=KYl46gl7y2Y)
 
 
 ## Required Parts
