@@ -9,8 +9,8 @@ Display upcoming Port Authority of Allegheny County bus/T times on a scrolling L
   a. SD Card  
   b. WiFi dongle (optional: can use ethernet) (note: WiFi is built into v3 and ZeroW)  
   c. USB Micro-B USB cable/charger (same as most - if not all - Android phones/tablets)  
-  e. HDMI Cable and HDMI compatible monitor (or necessary adapters) (for initial setup)
-  d. USB Keyboard (for initial setup)
+  d. HDMI Cable and HDMI compatible monitor (or necessary adapters) (for initial setup)  
+  e. USB Keyboard (for initial setup)
 2. MAX7219 controlled LED matrix(ces) I happened to use [this one](https://www.amazon.com/gp/product/B01EJ1AFW8/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1) but any MAX7219-controlled LED Matrix(ces) should work (with a little coding).
 
 
